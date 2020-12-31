@@ -1,4 +1,6 @@
 import Address from "../models/Address";
+import {Op} from 'sequelize';
+
 
 
 class AddressController {
@@ -15,7 +17,17 @@ class AddressController {
   }
 
   async findByStreet(request, response){
+    const street = request.query.street;
+    const addresses = await Address.findAll({
+      limit: 10,
+      where: {
+        street:{
+          [Op.like]: '%' + street + '%'
+        }
+      }
+    });
 
+    return response.json(addresses);
   }
 
 }
