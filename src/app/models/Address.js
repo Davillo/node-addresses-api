@@ -10,7 +10,8 @@ class Address extends Model {
       type: Sequelize.INTEGER,
     },
     {
-      sequelize
+      sequelize,
+      timestamps: false
     });
 
     return this;
