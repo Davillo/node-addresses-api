@@ -1,8 +1,6 @@
 import Address from "../models/Address";
 import {Op} from 'sequelize';
 
-
-
 class AddressController {
 
   async findByCep(request, response){
@@ -22,7 +20,7 @@ class AddressController {
       limit: 10,
       where: {
         street:{
-          [Op.like]: '%' + street + '%'
+          [Op.like]: `%${street}%`
         }
       }
     });
