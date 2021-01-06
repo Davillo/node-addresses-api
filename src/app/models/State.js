@@ -8,7 +8,8 @@ class State extends Model {
       name: Sequelize.STRING,
     },
     {
-      sequelize
+      sequelize,
+      timestamps: false
     });
 
     return this;

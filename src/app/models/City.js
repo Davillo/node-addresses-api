@@ -8,10 +8,15 @@ class City extends Model {
       name: Sequelize.STRING,
     },
     {
-      sequelize
+      sequelize,
+      timestamps: false
     });
 
     return this;
+  }
+
+  static associate(models){
+    this.belongsTo(models.State, {foreignKey: 'state_id', as: 'state'})
   }
 
 }

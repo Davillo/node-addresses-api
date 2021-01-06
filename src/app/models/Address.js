@@ -17,6 +17,9 @@ class Address extends Model {
     return this;
   }
 
+  static associate(models){
+    this.belongsTo(models.District, {foreignKey: 'district_id', as: 'district'})
+  }
 }
 
 export default Address;

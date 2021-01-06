@@ -8,12 +8,16 @@ class District extends Model {
       name: Sequelize.STRING,
     },
     {
-      sequelize
+      sequelize,
+      timestamps: false
     });
 
     return this;
   }
 
+  static associate(models){
+    this.belongsTo(models.City, {foreignKey: 'city_id', as: 'city'})
+  }
 }
 
 export default District;
