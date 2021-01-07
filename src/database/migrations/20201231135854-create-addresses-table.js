@@ -11,7 +11,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      cep: {
+      zip_code: {
         allowNull: false,
         type: Sequelize.STRING,
       },

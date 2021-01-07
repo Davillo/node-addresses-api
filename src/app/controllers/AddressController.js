@@ -7,12 +7,12 @@ import State from "../models/State";
 
 class AddressController {
 
-  async findByCep(request, response){
-    const cep = request.params.cep;
+  async findByZipCode(request, response){
+    const zipCode = request.params.zipCode;
 
     const address = await Address.findOne({
-      where: {cep: cep},
-      attributes: ['id', 'street', 'cep'],
+      where: {zip_code: zipCode},
+      attributes: ['id', 'street', 'zip_code'],
       include: [
       {
         attributes: ['id', 'name'],
